@@ -39,20 +39,20 @@ For connecting to an external H2 database, your application.properties could loo
     spring.datasource.driver-class-name=org.h2.Driver
 
 
-##Scope
+## Scope
 1. Longitude Importer connects to IRI nodes at the provided ZMQ ports. It reads transactions and trytes from these nodes in realtime as they are made available.
 2. Longitude importer writes the transactions to the underlying repository which can be backed by a relational (SQL or NewSQL) database. Tests have been performed with H2, Postgres, and Cockroachdb.
 3. Longitude importer is idempotent; ensuring that multiple threads can read from different nodes at the same time.
 4. Cassandra is not supported; although the repository classes can be implemented to use NoSQL as backing storage.
 
 
-##Schema
+## Schema
 Data is stored in two tables:
 1. Transaction table: includes all transactions data that arrive on the tx and sn topics. This includes such data as hash, bundle, timestamp, trunk,branch, milestone, and persistence state. By default, there are secondary indexes on address and bundle.
 2. Signature fragment table: this includes all information that arrive on the tx_trytes topic. The key is the hash column.
 
 
-##Dependencies
+## Dependencies
 This is a Java application. This implies following dependencies:
 1. Java 8
 2. A relational database; this has been tested with H2, Postgress, and Cockroachdb
