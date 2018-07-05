@@ -18,7 +18,9 @@ Three goals underpin this project: simplicity, high availability, and high throu
 
 This a development deployment that will launch the importer with embedded H2 database. It will also point to a random IRI node. For a more serious launch, edit src/main/resources/application.properties and supply your database and IRI details. You then start the importer with following command:
 
-   java -jar target/iota-archive-longitude.jar --spring.config.location=file://path/to/my/file/application.properties
+
+    java -jar target/iota-archive-longitude.jar --spring.config.location=file:/path/to/my/file/application.properties
+
 
 For connecting to an external H2 database, your application.properties could look as following:
 
