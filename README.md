@@ -6,16 +6,15 @@ Three goals underpin this project: simplicity, high availability, and high throu
 * [Table of Contents](#table-of-contents)
 * [Usage](#usage)
 * [Scope](#scope)
-* [Input & Output](#input--output)
-* [Environment & Dependencies](#environment--dependencies)
-* [Technical & Design Decisions](#technical--design-Decisions)
-* [References](#references)
+* [Schema](#schema)
+* [Dependencies](#dependencies)
+* [Notes](#notes)
 
 ## Usage
     git clone https://github.com/nelium-unlimited/iota-archive-longitude.git
     cd iota-archive-longitude
     mvn clean install
-    java -jar target/iota-archive-longitude.jar
+    java -jar target/iota.archive.longitude-0.0.1-SNAPSHOT.jar
 
 This a development deployment that will launch the importer with embedded H2 database. It will also point to a random IRI node. For a more serious launch, edit src/main/resources/application.properties and supply your database and IRI details. You then start the importer with following command:
 

@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>demo</name>
+	<name>IOTA Archive Longitude</name>
 	<description>Loader Project for Iota IRI Node. Reads transactions from IRI ZMQ Port and writes them into a database.</description>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
