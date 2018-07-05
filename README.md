@@ -57,6 +57,6 @@ This is a Java application. This implies following dependencies:
 1. Java 8
 2. A relational database; this has been tested with H2, Postgress, and Cockroachdb
 
-##Notes
+## Notes
 1. For performance optimization and to avoid overloading the database, the importer cashes transactions. Separate threads read from the internal queue and write the transactions in batch to the database.
 2. The property io.nelium.shard.range allows sharding the import process. It takes two strings of same length as input. This input determines the range of transaction that should be accepted by a given node.

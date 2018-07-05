@@ -54,9 +54,9 @@ public class ShardingFilter {
 		String head=hash.substring(0, shardStart.length());
 		boolean accept= head.compareTo(shardStart)>=0 && head.compareTo(shardEnd)<0;
 		if(!accept){
-			logger.info("Rejecting transaction because of shard rule:{}",hash);
+			logger.debug("Rejecting transaction because of shard rule:{}",hash);
 		}else{
-			logger.info("Accepting transaction because of shard rule:{}",hash);
+			logger.debug("Accepting transaction because of shard rule:{}",hash);
 		}
 		return accept;
 	}
