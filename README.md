@@ -1,5 +1,5 @@
 # iota-archive-longitude
-This is an IOTA loader project. It reads data from IOTA Node's ZMQ port and writes it to data repository. The data repository is backed by SQL or NewSQL database.
+This is an IOTA import project for archiving IORA transactions. It reads data from IOTA Node's ZMQ port and writes it to data repository. The data repository is backed by SQL or NewSQL database.
 Three goals underpin this project: simplicity, high availability, and high throughput. The loader shall be ready to scale when the tangle reaches thousands of tps.
 
 ## Table of Contents
@@ -54,8 +54,8 @@ Data is stored in two tables:
 ## Dependencies
 This is a Java application. This implies following dependencies:
 1. Java 8
-2. A relational database; this has been tested with H2, Postgress, and Cockroachdb
+2. A relational database; this has been tested with H2, Postgres, and Cockroachdb
 
 ## Notes
-1. For performance optimization and to avoid overloading the database, the importer cashes transactions. Separate threads read from the internal queue and write the transactions in batch to the database.
+1. For performance optimization and to avoid overloading the database, the importer cashes transactions. Separate threads read from the internal queue and write the transactions in batch to the database. Use this feature wisely as it increases the write load on your database.
 2. The property io.nelium.shard.range allows sharding the import process. It takes two strings of same length as input. This input determines the range of transaction that should be accepted by a given node.
